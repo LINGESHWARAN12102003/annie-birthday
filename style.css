@@ -1,0 +1,131 @@
+
+/* ===== BACKGROUND IMAGE ===== */
+
+body.bg{
+background-image:url("background.jpeg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+font-family:Arial, sans-serif;
+overflow-x:hidden;
+color:white;
+}
+
+/* Dark overlay */
+
+body.bg::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+z-index:-1;
+}
+
+
+/* ===== TEXT ===== */
+
+.wish{
+font-size:42px;
+font-weight:bold;
+}
+
+.sub{
+font-size:20px;
+}
+
+
+/* ===== PHOTO SLIDER ===== */
+
+.slider{
+height:260px;
+margin-top:60px;
+overflow:hidden;
+position:relative;
+}
+
+.slide-track{
+display:flex;
+width:calc(240px * 40);
+animation:scroll 45s linear infinite;
+}
+
+.slide-track img{
+width:220px;
+height:220px;
+margin:10px;
+border-radius:20px;
+object-fit:cover;
+box-shadow:0 6px 20px rgba(0,0,0,0.5);
+transition:transform 0.3s;
+}
+
+.slide-track img:hover{
+transform:scale(1.05);
+}
+
+/* Infinite animation */
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+
+100%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+}
+
+
+/* ===== BUTTON STYLE ===== */
+
+.btn-danger{
+border-radius:30px;
+padding:10px 25px;
+font-weight:bold;
+}
+
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+.wish{
+font-size:28px;
+}
+
+.sub{
+font-size:16px;
+}
+
+.slider{
+height:180px;
+}
+
+.slide-track img{
+width:140px;
+height:140px;
+margin:6px;
+}
+
+}
