@@ -2,27 +2,37 @@
 /* ===== BACKGROUND IMAGE ===== */
 
 body.bg{
-background-image:url("background.jpeg");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-background-attachment:fixed;
-font-family:Arial, sans-serif;
-overflow-x:hidden;
-color:white;
+background-image: url("background.jpeg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+min-height: 100vh;
+font-family: Arial, sans-serif;
+overflow-x: hidden;
 }
 
-/* Dark overlay */
-
+/* Dark overlay for readability */
 body.bg::before{
 content:"";
-position:fixed;
+position: fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.45);
+background: rgba(0,0,0,0.45);
 z-index:-1;
+}
+
+/* Mobile Fix */
+@media (max-width:768px){
+
+body.bg{
+background-size: cover;
+background-position: center;
+background-attachment: scroll;
+}
+
 }
 
 
@@ -127,5 +137,6 @@ width:140px;
 height:140px;
 margin:6px;
 }
+
 
 }
